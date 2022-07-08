@@ -1,4 +1,4 @@
-//https://youtu.be/UgVDmduFV_w
+// link youtube https://youtu.be/UgVDmduFV_w
 int cant, tam, newMemoria;
 PImage []memoria = new PImage[13];
 int []columnas = new int[5];
