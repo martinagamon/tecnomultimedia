@@ -11,10 +11,14 @@ void imagenes() {
     }
   }
 }
-void reiniciar(){
+void texto( String texto, float x, float y, float tamanio) {
+
+  textAlign( CENTER );
+  textSize( tamanio );
+  text( texto, x, y );
+} 
+
+void reiniciar() {
   estado=0;
   contador=0;
-  
-  
-  
 }
