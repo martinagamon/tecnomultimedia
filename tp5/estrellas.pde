@@ -4,11 +4,13 @@
 // color relleno;
 
 //Estrellas(){}
+//PImage estrellas
 
 
 
 //MÉTODOS
 //void dibujar(){}
+for (estrellas por toda la pantalla)
 
 
 //}
