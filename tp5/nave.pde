@@ -3,7 +3,7 @@ class Nave { //<>//
   float x, y;
   int tam, cant;
 
-  Nave() {
+  Nave(float x, float y) {
     navecita = loadImage("nave.png");
     x = 700;
     y = 300;
@@ -11,9 +11,10 @@ class Nave { //<>//
 
 
   void dibujar() {
-    image(navecita, x, y, 100, 50);
+    image(navecita, mouseX, mouseY, 100, 50);
   }
-  void mover() {
+}
+  /*void mover() {
     if (keyPressed && (key== CODED)) {
       if (keyCode==LEFT) {
         x -=3;
@@ -28,5 +29,5 @@ class Nave { //<>//
     }
   }
   //if() ---> para mover la nave y esquivar objetos.
-  //if nave choca con planeta pierde
-}
+  //if nave choca con planeta pierde/*
+}*/

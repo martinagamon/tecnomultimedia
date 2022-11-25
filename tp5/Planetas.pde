@@ -3,9 +3,11 @@ class Planetas {
   int cantidadPlanetas, vel;
   float posX, posY, x, y;
 
-  Planetas () {
+  Planetas (float posX, float posY) {
     this.vel = 10;
     cantidadPlanetas = 0;
+    x=posX;
+    y=posY;
     planetas = new PImage [5];
     for (int i=0; i<5; i++) {
       planetas [i] = loadImage (i+".png");

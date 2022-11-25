@@ -3,7 +3,7 @@ class Espacio {
   PImage fondo, estrellitas;
   float posX, posY;
   int estado, contador;
-  Planetas planetas; 
+  Planetas planetas;
   Estrellas varias;
   Nave n1;
 
@@ -13,8 +13,8 @@ class Espacio {
     creditos=createFont("SultanNahiaW20.ttf", 100);
     letrita=createFont("Lemon Days.ttf", 20);
     varias = new Estrellas();
-    n1 = new Nave();
-    planetas = new Planetas();
+    n1 = new Nave(50,300);
+    planetas = new Planetas(35, 365);
     estado = 0;
     contador = 0;
   }
@@ -70,6 +70,10 @@ class Espacio {
     planetas.actualizar();
     contador ++;
     // condición perder
+    float d = dist(planetas.posX, planetas.posY, mouseX, mouseY);
+    if (d<100) {  //PERDISTE
+      estado=3;
+    }
     if (contador>=5*100) {
       estado = 3;
     }
@@ -117,7 +121,7 @@ class Espacio {
 
   void teclado() {
     varias.reiniciar();
-    n1.mover();
+//n1.mover();
   }
 
   void reiniciar() {
