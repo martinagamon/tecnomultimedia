@@ -1,15 +1,23 @@
-/* el juego constará de una nave que debe esquivar los planetas, Maria Dolores Panelli 91371/7 y Martina Gamón 91538/3
+// Maria Dolores Panelli 91371/7 y Martina Gamón 91538/3
 
-//Espacio espacio;
-//void setup(){}
+Espacio espacio;
+void setup() {
+  size(800, 600);
+  espacio = new Espacio();
+}
+void draw() {
 
-//espacio=New Espacio
+  espacio.dibujar();
+}
 
-//void draw(){
+void keyPressed () {
+  espacio.mouse();
+  espacio.teclado();
+  espacio.reiniciar();
+}
+void mousePressed(){
+  espacio.mousePressed();
   
-//espacio.dibujar();
-//}
-
-//void keyPressed () {
- // espacio.jugar();
-//}
+  
+  
+}

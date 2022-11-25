@@ -1,21 +1,32 @@
-/*
-// class Nave{
-// PImage nave;
-// float x, y;
-//tam,cant
+class Nave { //<>//
+  PImage navecita;
+  float x, y;
+  int tam, cant;
 
-//Nave(){}
-//pimage=nave
+  Nave() {
+    navecita = loadImage("nave.png");
+    x = 700;
+    y = 300;
+  }
 
-//MÉTODOS
 
-void.dibujar(){}
-image pocisions, tamanio
-
-void.mover(){}
-if(keycode) ---> para mover la nave y esquivar objetos.
-if nave choca con planeta pierde
-
-void.Planeta(){}
-//}
-*/
+  void dibujar() {
+    image(navecita, x, y, 100, 50);
+  }
+  void mover() {
+    if (keyPressed && (key== CODED)) {
+      if (keyCode==LEFT) {
+        x -=3;
+      } else if (keyCode == RIGHT) {
+        x +=3;
+      }
+      if (keyCode == UP) {
+        y -=3;
+      } else if (keyCode==DOWN) {
+        y +=3;
+      }
+    }
+  }
+  //if() ---> para mover la nave y esquivar objetos.
+  //if nave choca con planeta pierde
+}
