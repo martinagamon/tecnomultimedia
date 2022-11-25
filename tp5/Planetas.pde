@@ -1,39 +1,39 @@
 class Planetas {
-  float posX, posY, x , y;
   PImage [] planetas;
-   int  vel, cantidadPlanetas;
+  int cantidadPlanetas, vel;
+  float posX, posY, x, y;
+
   Planetas () {
-     this.vel = 0;
+    this.vel = 10;
     cantidadPlanetas = 0;
     planetas = new PImage [5];
     for (int i=0; i<5; i++) {
       planetas [i] = loadImage (i+".png");
     }
-    posY = random (45, 305);
-    posX = -200;
+    posY = random (75, 365);
+    posX = 100;
   }
 
   void dibujar () {
     pushStyle ();
     image (planetas [cantidadPlanetas], posX, posY);
     popStyle ();
+  
 
 
-    if (posX > width + 100) {
-      posX = -200;
-      posY = random (45, 305);
+    if (posX > width + 200) {
+      posY = random (75, 365);
+      posX = 100;
       cantidadPlanetas ++;
       vel ++;
     }
-
+    
     if (cantidadPlanetas >= 5) {
       cantidadPlanetas = 0;
     }
   }
-  void actualizar(){
-    
+  void actualizar() {
+
     this.posX  += this.vel;
-    
-    
   }
 }
