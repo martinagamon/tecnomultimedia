@@ -1,6 +1,7 @@
 class Espacio {
   PFont letrita, creditos;
   PImage fondo, estrellitas;
+  float posX, posY;
   int estado, contador;
   Planetas planetas; 
   Estrellas varias;
@@ -21,20 +22,31 @@ class Espacio {
   void dibujar() { 
     if (estado == 0) {
       pantallaInicio();
+      player2.pause();
+      player.play();
     }
     if (estado == 1) {
       pantallaJuego();
+      player.pause();
+      player1.play();
     }
     if (estado == 2) {
       pantallaGanaste();
+      player1.pause();
+      player2.play();
     }
     if (estado == 3) {
       pantallaPerdiste();
+      player1.pause();
+      player3.play();
     }
     if (estado == 4) {
       pantallaCreditos();
+      player3.pause();
+      player2.play();
     }
   }
+
   void pantallaInicio() {
     textFont(letrita);
     image(fondo, 0, 0, 800, 600); 
@@ -48,6 +60,7 @@ class Espacio {
     fill(53, 79, 126);
     text("JUGAR", 335, 485);
   }
+
   void pantallaJuego() {
     image(fondo, 0, 0, 800, 600);
     varias.crear();
@@ -57,7 +70,7 @@ class Espacio {
     planetas.actualizar();
     contador ++;
     // condición perder
-    if (contador>=3*100) {
+    if (contador>=5*100) {
       estado = 3;
     }
   }

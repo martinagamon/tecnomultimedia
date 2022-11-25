@@ -18,16 +18,16 @@ class Planetas {
     pushStyle ();
     image (planetas [cantidadPlanetas], posX, posY);
     popStyle ();
-  
+
 
 
     if (posX > width + 200) {
       posY = random (75, 365);
-      posX = 100;
+      posX = 20;
       cantidadPlanetas ++;
       vel ++;
     }
-    
+
     if (cantidadPlanetas >= 5) {
       cantidadPlanetas = 0;
     }
