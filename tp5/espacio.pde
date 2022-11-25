@@ -1,8 +1,8 @@
 class Espacio {
   PFont letrita, creditos;
   PImage fondo, estrellitas;
-  float posX, posY;
-  int estado, contador;
+  float posX, posY, velC=0.1;
+  int estado, contador, realContador;
   Planetas planetas;
   Estrellas varias;
   Nave n1;
@@ -13,7 +13,7 @@ class Espacio {
     creditos=createFont("SultanNahiaW20.ttf", 100);
     letrita=createFont("Lemon Days.ttf", 20);
     varias = new Estrellas();
-    n1 = new Nave(50,300);
+    n1 = new Nave();
     planetas = new Planetas(35, 365);
     estado = 0;
     contador = 0;
@@ -55,7 +55,7 @@ class Espacio {
     fill(255);
     texto("SPACEGAME", 120, 320, 100);
     textFont(creditos);
-    texto("Esquiva más de 10 planetas en menos de 60 segundos \n       CUIDADO! Si te chocas más de 3 pierdes :(", 130, 360, 30);
+    texto("Esquiva todos los planetas antes de los 20 segundos \n        CUIDADO! Si te chocas alguno pierdes :(", 130, 360, 30);
     rect(300, 450, 150, 50);
     fill(53, 79, 126);
     text("JUGAR", 335, 485);
@@ -65,13 +65,24 @@ class Espacio {
     image(fondo, 0, 0, 800, 600);
     varias.crear();
     n1.dibujar();
+    fill(53, 79, 126);
+    textSize(150);
+    text(" "+ contador, width-485, 350);
     planetas.dibujar();
     println(contador);
     planetas.actualizar();
-    contador ++;
+
+    // condición ganar
+    if (contador>20) {
+      estado = 2;
+    }
+    realContador=(realContador+1)%20;
+    if (realContador==0) {
+      contador=contador+1;
+    }
     // condición perder
     float d = dist(planetas.posX, planetas.posY, mouseX, mouseY);
-    if (d<100) {  //PERDISTE
+    if (d<90) { 
       estado=3;
     }
     if (contador>=5*100) {
@@ -121,7 +132,7 @@ class Espacio {
 
   void teclado() {
     varias.reiniciar();
-//n1.mover();
+    //n1.mover();
   }
 
   void reiniciar() {

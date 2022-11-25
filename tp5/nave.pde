@@ -3,7 +3,7 @@ class Nave { //<>//
   float x, y;
   int tam, cant;
 
-  Nave(float x, float y) {
+  Nave() {
     navecita = loadImage("nave.png");
     x = 700;
     y = 300;
@@ -14,4 +14,3 @@ class Nave { //<>//
     image(navecita, mouseX, mouseY, 100, 50);
   }
 }
-

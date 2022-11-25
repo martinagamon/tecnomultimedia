@@ -4,7 +4,7 @@ class Planetas {
   float posX, posY, x, y;
 
   Planetas (float posX, float posY) {
-    this.vel = 10;
+    this.vel = 15;
     cantidadPlanetas = 0;
     x=posX;
     y=posY;
