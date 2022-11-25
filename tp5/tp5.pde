@@ -1,3 +1,5 @@
+// Maria Dolores Panelli 91371/7 y Martina Gamón 91538/3
+// link yt https://www.youtube.com/watch?v=hkuK2j1jP
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -5,8 +7,6 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 
-// Maria Dolores Panelli 91371/7 y Martina Gamón 91538/3
-import ddf.minim.*;
 Minim minim;
 AudioPlayer player;
 AudioPlayer player1;
