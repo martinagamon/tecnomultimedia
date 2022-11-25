@@ -14,20 +14,4 @@ class Nave { //<>//
     image(navecita, mouseX, mouseY, 100, 50);
   }
 }
-  /*void mover() {
-    if (keyPressed && (key== CODED)) {
-      if (keyCode==LEFT) {
-        x -=3;
-      } else if (keyCode == RIGHT) {
-        x +=3;
-      }
-      if (keyCode == UP) {
-        y -=3;
-      } else if (keyCode==DOWN) {
-        y +=3;
-      }
-    }
-  }
-  //if() ---> para mover la nave y esquivar objetos.
-  //if nave choca con planeta pierde/*
-}*/
+
